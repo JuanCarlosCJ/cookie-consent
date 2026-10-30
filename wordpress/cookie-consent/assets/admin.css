@@ -1,0 +1,8 @@
+.ccwp { max-width: 1100px; }
+.ccwp-lead { font-size: 14px; max-width: 760px; }
+.ccwp-card { background: #fff; border: 1px solid #dcdcde; border-radius: 8px; padding: 4px 20px 12px; margin: 16px 0; }
+.ccwp-card h2 { margin: 16px 0 4px; }
+.ccwp .form-table td fieldset label.ccwp-check, .ccwp .form-table td fieldset label.ccwp-radio { display: block; margin: 0 0 8px !important; }
+.ccwp-check .description { margin-left: 4px; }
+.ccwp-texts input { margin-bottom: 6px; }
+.ccwp-side ul { list-style: disc; padding-left: 20px; }

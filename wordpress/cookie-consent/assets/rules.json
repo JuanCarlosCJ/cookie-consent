@@ -1,0 +1,175 @@
+[
+  {
+    "name": "Google Analytics",
+    "category": "analytics",
+    "on": "both",
+    "contains": "googletagmanager.com/gtag/js"
+  },
+  {
+    "name": "Google Analytics",
+    "category": "analytics",
+    "on": "both",
+    "contains": "google-analytics.com"
+  },
+  {
+    "name": "Google Analytics",
+    "category": "analytics",
+    "on": "inline",
+    "regex": "\\bgtag\\(\\s*['\"](config|js)['\"]",
+    "flags": ""
+  },
+  {
+    "name": "Google Tag Manager",
+    "category": "analytics",
+    "on": "both",
+    "contains": "googletagmanager.com/gtm.js"
+  },
+  {
+    "name": "Google Tag Manager",
+    "category": "analytics",
+    "on": "both",
+    "contains": "googletagmanager.com/ns.html"
+  },
+  {
+    "name": "Hotjar",
+    "category": "analytics",
+    "on": "both",
+    "contains": "hotjar.com"
+  },
+  {
+    "name": "Hotjar",
+    "category": "analytics",
+    "on": "inline",
+    "contains": "_hjSettings"
+  },
+  {
+    "name": "Microsoft Clarity",
+    "category": "analytics",
+    "on": "both",
+    "contains": "clarity.ms"
+  },
+  {
+    "name": "Matomo",
+    "category": "analytics",
+    "on": "both",
+    "regex": "\\/(matomo|piwik)\\.(js|php)",
+    "flags": ""
+  },
+  {
+    "name": "Yandex Metrica",
+    "category": "analytics",
+    "on": "both",
+    "contains": "mc.yandex.ru"
+  },
+  {
+    "name": "Meta Pixel",
+    "category": "marketing",
+    "on": "both",
+    "contains": "connect.facebook.net"
+  },
+  {
+    "name": "Meta Pixel",
+    "category": "marketing",
+    "on": "inline",
+    "regex": "\\bfbq\\(\\s*['\"]init['\"]",
+    "flags": ""
+  },
+  {
+    "name": "TikTok Pixel",
+    "category": "marketing",
+    "on": "both",
+    "contains": "analytics.tiktok.com"
+  },
+  {
+    "name": "LinkedIn Insight Tag",
+    "category": "marketing",
+    "on": "both",
+    "contains": "snap.licdn.com"
+  },
+  {
+    "name": "LinkedIn Insight Tag",
+    "category": "marketing",
+    "on": "inline",
+    "contains": "_linkedin_partner_id"
+  },
+  {
+    "name": "Google Ads",
+    "category": "marketing",
+    "on": "both",
+    "contains": "googleadservices.com"
+  },
+  {
+    "name": "Google Ads",
+    "category": "marketing",
+    "on": "both",
+    "contains": "doubleclick.net"
+  },
+  {
+    "name": "Google AdSense",
+    "category": "marketing",
+    "on": "both",
+    "contains": "pagead2.googlesyndication.com"
+  },
+  {
+    "name": "Pinterest Tag",
+    "category": "marketing",
+    "on": "both",
+    "contains": "s.pinimg.com/ct"
+  },
+  {
+    "name": "X (Twitter) Ads",
+    "category": "marketing",
+    "on": "both",
+    "contains": "static.ads-twitter.com"
+  },
+  {
+    "name": "Microsoft Ads",
+    "category": "marketing",
+    "on": "both",
+    "contains": "bat.bing.com"
+  },
+  {
+    "name": "YouTube",
+    "category": "media",
+    "on": "both",
+    "regex": "youtube(-nocookie)?\\.com\\/embed",
+    "flags": ""
+  },
+  {
+    "name": "Vimeo",
+    "category": "media",
+    "on": "both",
+    "contains": "player.vimeo.com"
+  },
+  {
+    "name": "Google Maps",
+    "category": "media",
+    "on": "both",
+    "regex": "google\\.[a-z.]+\\/maps|maps\\.google\\.|maps\\.googleapis\\.com",
+    "flags": ""
+  },
+  {
+    "name": "Spotify",
+    "category": "media",
+    "on": "both",
+    "contains": "open.spotify.com/embed"
+  },
+  {
+    "name": "Instagram",
+    "category": "media",
+    "on": "both",
+    "contains": "instagram.com/embed"
+  },
+  {
+    "name": "X (Twitter) embed",
+    "category": "media",
+    "on": "both",
+    "contains": "platform.twitter.com"
+  },
+  {
+    "name": "SoundCloud",
+    "category": "media",
+    "on": "both",
+    "contains": "w.soundcloud.com/player"
+  }
+]
