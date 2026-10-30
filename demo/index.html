@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Cookie Consent demo</title>
+
+  <!-- 1. The configuration and the script, first thing in <head>. -->
+  <script data-cc-ignore>
+    window.cookieConsentConfig = {
+      policyUrl: '#policy',
+      accent: '#b9532f',
+      rules: [{ name: 'Demo stats', category: 'analytics', pattern: 'stats.example.org' }],
+    }
+  </script>
+  <script data-cc-ignore src="../dist/cookie-consent.min.js"></script>
+
+  <!-- 2. Ordinary tracking snippets, pasted as usual. The IDs are fake. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-DEMO000000"></script>
+  <script>
+    window.dataLayer = window.dataLayer || []
+    function gtag() { dataLayer.push(arguments) }
+    gtag('js', new Date())
+    gtag('config', 'G-DEMO000000')
+  </script>
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '000000000000000'); fbq('track', 'PageView');
+  </script>
+
+  <style data-cc-ignore>
+    body { margin: 0; font: 16px/1.6 Georgia, 'Times New Roman', serif; color: #2a2420; background: #f7f2ea; }
+    header, main, footer { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+    header { display: flex; justify-content: space-between; align-items: center; padding-top: 22px; }
+    header strong { font-size: 22px; }
+    nav a { margin-left: 18px; color: inherit; text-decoration: none; font-family: system-ui, sans-serif; font-size: 15px; }
+    h1 { font-size: clamp(32px, 6vw, 52px); line-height: 1.1; margin: 48px 0 12px; }
+    .lead { font-size: 19px; max-width: 620px; color: #5c5148; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 32px 0; }
+    .grid iframe { width: 100%; aspect-ratio: 16 / 10; height: auto; border: 0; border-radius: 10px; }
+    .status { font-family: system-ui, sans-serif; font-size: 14px; background: #fff; border: 1px solid #e6dccf; border-radius: 12px; padding: 14px 18px; margin: 0 0 40px; }
+    .status h2 { font-size: 15px; margin: 0 0 8px; }
+    .status ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 6px 16px; }
+    .on { color: #1a7f37; font-weight: 700; }
+    .off { color: #b42318; font-weight: 700; }
+    footer { font-family: system-ui, sans-serif; font-size: 14px; color: #7a6f66; padding-bottom: 120px; }
+    footer a { color: inherit; }
+    @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } nav { display: none; } }
+  </style>
+</head>
+<body>
+  <header>
+    <strong>Panadería Ejemplo</strong>
+    <nav><a href="#">Bread</a><a href="#">Visit us</a><a href="#policy">Cookies</a></nav>
+  </header>
+
+  <main>
+    <h1>Fresh sourdough, every morning.</h1>
+    <p class="lead">A demo page with the usual suspects: Google Analytics, a Meta Pixel, a YouTube video and a Google Map. None of them run until you say so.</p>
+
+    <!-- 3. Embeds, also pasted as usual. -->
+    <div class="grid">
+      <iframe src="https://www.youtube-nocookie.com/embed/SY2cqLB5_wo" title="How to make sourdough bread" allowfullscreen></iframe>
+      <iframe src="https://maps.google.com/maps?q=Jerez%20de%20la%20Frontera&amp;z=14&amp;output=embed" title="A map" loading="lazy"></iframe>
+    </div>
+
+    <section class="status" data-cc-ignore aria-live="polite">
+      <h2>What's running on this page right now</h2>
+      <ul id="status"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>This is a demo of <a href="https://github.com/JuanCarlosCJ/cookie-consent">Cookie Consent</a>.
+      <a href="#" data-cc-open>Cookie settings</a> · <a href="?cookie-scan">Scan this page</a></p>
+  </footer>
+
+  <script data-cc-ignore>
+    // Shows live whether each tracker has actually run.
+    function refresh() {
+      const items = [
+        ['Google Analytics', typeof window.google_tag_manager !== 'undefined' || (window.dataLayer || []).length > 0],
+        ['Meta Pixel', typeof window.fbq === 'function'],
+        ['YouTube video', !!document.querySelector('iframe[src*="youtube"]')],
+        ['Google Map', !!document.querySelector('iframe[src*="maps.google"]')],
+      ]
+      document.getElementById('status').innerHTML = items
+        .map(([name, on]) => `<li>${name}: <span class="${on ? 'on' : 'off'}">${on ? 'running' : 'blocked'}</span></li>`)
+        .join('')
+    }
+    refresh()
+    window.addEventListener('cookieconsent:change', () => setTimeout(refresh, 1500))
+  </script>
+</body>
+</html>
